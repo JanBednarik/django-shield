@@ -1,17 +1,13 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "django-shield"
 version = "0.0.1"
-authors = [
-  { name="Jan Bednařík", email="jan.bednarik@gmail.com" },
-]
 description = "Per field and per object authorization for Django admin."
+authors = ["Jan Bednařík <jan.bednarik@gmail.com>"]
+license = "MIT"
 readme = "README.md"
-license = { file="LICENSE" }
-requires-python = ">=3.8"
+homepage = "https://github.com/JanBednarik/django-shield"
+repository = "https://github.com/JanBednarik/django-shield"
+keywords = ["django", "admin", "auth", "authorization"]
 classifiers = [
     "Development Status :: 1 - Planning",
     "License :: OSI Approved :: MIT License",
@@ -26,7 +22,13 @@ classifiers = [
     "Topic :: Security",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+packages = [
+    { include = "shield" },
+]
 
-[project.urls]
-"Homepage" = "https://github.com/JanBednarik/django-shield"
-"Bug Tracker" = "https://github.com/JanBednarik/django-shield/issues"
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
